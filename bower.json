@@ -1,0 +1,12 @@
+{
+  "name": "blackbone_handlebars_example",
+  "version": "0.0.1",
+  "authors": [
+    "Jakub Korupczynski <jakub.korupczynski@gmail.com>"
+  ],
+  "description": "Example of setup javascript project with Blackbone, Underscore and Handlebars",
+  "license": "MIT",
+  "dependencies": {
+    "backbone": "~1.2.1"
+  }
+}
