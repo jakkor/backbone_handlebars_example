@@ -18,6 +18,7 @@
     "broccoli-concat": "0.0.13",
     "broccoli-env": "0.0.1",
     "broccoli-handlebars-precompiler": "0.0.2",
+    "broccoli-less": "^2.0.0",
     "broccoli-merge-trees": "^0.2.1",
     "broccoli-static-compiler": "^0.2.1",
     "broccoli-uglify-js": "^0.1.3",
