@@ -1,8 +1,10 @@
 (function(){
   'use strict';
 
-  app.views.App = Backbone.View.Extend({
+  var AppView = Backbone.View.Extend({
     el: $('movieCollectionApp')
   });
+
+  app.views.app = new AppView();
 
 }());

@@ -1,8 +1,10 @@
 (function(){
   'use strict';
 
-  app.models.Genre = Backbone.Model.Extend({
+  var GenreModel = Backbone.Model.Extend({
 
   });
+
+  app.models.genre = new GenreModel();
 
 }());

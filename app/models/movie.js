@@ -1,8 +1,10 @@
 (function(){
   'use strict';
 
-  app.models.Movie = Backbone.Model.extend({
+  var MovieModel = Backbone.Model.extend({
 
   });
+
+  app.models.movie = new MovieModel();
 
 }());

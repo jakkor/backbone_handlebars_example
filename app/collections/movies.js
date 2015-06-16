@@ -1,10 +1,12 @@
 (function(){
   'use strict';
 
-  app.collections.Movies = Backbone.Collection.Extend({
+  var MoviesCollection = Backbone.Collection.Extend({
     model: app.MovieModel,
 
     localStorage: new Backbone.LocalStorage("movies-backbone")
   });
+
+  app.collections.movies = new MoviesCollection();
 
 }());
