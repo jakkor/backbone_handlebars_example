@@ -22,12 +22,7 @@ app = concatenate(app, {
     outputFile : '/assets/scripts.js',
 });
 
-if (IS_PRODUCTION_ENV) {
-  app = uglifyJs(app, {
-      compress: true
-  });
-}
-
+app = less(app);
 
 var indexFile = pickFiles('public', {
   srcDir: '/',
@@ -35,6 +30,23 @@ var indexFile = pickFiles('public', {
   destDir: '.'
 });
 
-app = less(app);
+var bowerTrees = concatenate('vendor', {
+    inputFiles : [
+      'jquery/dist/jquery.js',
+      'underscore/underscore.js',
+      'backbone/backbone.js',
+      'bootstrap/dist/js/bootstrap.js'
+    ],
+    outputFile : '/assets/vendor.js',
+});
 
-module.exports = mergeTrees([app, indexFile]);
+if (IS_PRODUCTION_ENV) {
+  app = uglifyJs(app, {
+      compress: true
+  });
+  bowerTrees = uglifyJs(bowerTrees, {
+      compress: true
+  });
+}
+
+module.exports = mergeTrees([app, indexFile, bowerTrees]);
