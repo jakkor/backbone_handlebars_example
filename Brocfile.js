@@ -14,6 +14,12 @@ var app = pickFiles('.', {
   destDir: '.'
 });
 
+var indexFile = pickFiles('public', {
+  srcDir: '/',
+  files: ['index.html'],
+  destDir: '.'
+});
+
 app = less(app);
 
-module.exports = mergeTrees([app]);
+module.exports = mergeTrees([app, indexFile]);
