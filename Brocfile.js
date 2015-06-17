@@ -14,6 +14,21 @@ var app = pickFiles('.', {
   destDir: '.'
 });
 
+//Concentate all Shop js files
+app = concatenate(app, {
+    inputFiles : [
+      '**/*.js'
+    ],
+    outputFile : '/assets/scripts.js',
+});
+
+if (IS_PRODUCTION_ENV) {
+  app = uglifyJs(app, {
+      compress: true
+  });
+}
+
+
 var indexFile = pickFiles('public', {
   srcDir: '/',
   files: ['index.html'],
