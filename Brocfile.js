@@ -10,7 +10,7 @@ var concatenate = require('broccoli-concat'),
 
 var app = pickFiles('.', {
   srcDir: '/',
-  files: ['app/**/*.js','assets/**/*.less'],
+  files: ['app/**/*.js','assets/**/*.less', 'app/templates/**/*.hbs'],
   destDir: '.'
 });
 
@@ -23,6 +23,11 @@ app = concatenate(app, {
 });
 
 app = less(app);
+app = broccoliHandlebars(app, {
+    srcDir: 'app/templates',
+    namespace: 'app.templates'
+  }
+);
 
 var indexFile = pickFiles('public', {
   srcDir: '/',
