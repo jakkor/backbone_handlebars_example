@@ -7,6 +7,7 @@
   "description": "Example of setup javascript project with Blackbone, Underscore and Handlebars",
   "license": "MIT",
   "dependencies": {
-    "backbone": "~1.2.1"
+    "backbone": "~1.2.1",
+    "backbone-localstorage": "~0.3.2"
   }
 }

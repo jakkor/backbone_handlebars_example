@@ -4,7 +4,7 @@ var app = (function(){
   return {
     views: [],
     models: [],
-    collections: []
-
+    collections: [],
+    templates: []
   };
-});
+}());

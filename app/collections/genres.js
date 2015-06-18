@@ -1,10 +1,10 @@
 (function(){
   'use strict';
 
-  var GenresCollection = Backbone.Collection.Extend({
+  var GenresCollection = Backbone.Collection.extend({
     model: app.GenreModel,
 
-    localStorage: new Backbone.LocalStorage("genres-backbone")
+    localStorage: true
   });
 
   app.collections.genres = new GenresCollection();

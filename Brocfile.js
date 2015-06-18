@@ -14,20 +14,25 @@ var app = pickFiles('.', {
   destDir: '.'
 });
 
-//Concentate all Shop js files
-app = concatenate(app, {
-    inputFiles : [
-      '**/*.js'
-    ],
-    outputFile : '/assets/scripts.js',
-});
-
 app = less(app);
 app = broccoliHandlebars(app, {
     srcDir: 'app/templates',
     namespace: 'app.templates'
   }
 );
+
+//Concentate all Shop js files
+app = concatenate(app, {
+    inputFiles : [
+      'app/app.js',
+      'app/templates/**/*.js',
+      'app/collections/**/*.js',
+      'app/models/**/*.js',
+      'app/routes/**/*.js',
+      'app/views/**/*.js'
+    ],
+    outputFile : '/assets/scripts.js',
+});
 
 var indexFile = pickFiles('public', {
   srcDir: '/',
@@ -40,7 +45,9 @@ var bowerTrees = concatenate('vendor', {
       'jquery/dist/jquery.js',
       'underscore/underscore.js',
       'backbone/backbone.js',
-      'bootstrap/dist/js/bootstrap.js'
+      'backbone-localstorage/backbone-localstorage.js',
+      'bootstrap/dist/js/bootstrap.js',
+      '../node_modules/handlebars/dist/handlebars.runtime.js'
     ],
     outputFile : '/assets/vendor.js',
 });
