@@ -1,0 +1,7 @@
+<table class="movieList">
+{{#each movie}}
+  <tr>
+    <td>1.</td><td>{{this.title}}</td><td>{{this.genre}}</td>
+  </tr>
+{{/each}}
+</table>
